@@ -15,6 +15,7 @@ export default defineConfig({
       '@': `${path.resolve(__dirname, 'src')}`
     }
   },
+  base: '/login-factory',
   build: {
     outDir: 'docs'
   },
