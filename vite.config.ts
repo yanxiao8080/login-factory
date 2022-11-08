@@ -15,7 +15,9 @@ export default defineConfig({
       '@': `${path.resolve(__dirname, 'src')}`
     }
   },
-
+  build: {
+    outDir: 'docs'
+  },
   // 反向代理这样配置
   server: {
     // port: 5174,
