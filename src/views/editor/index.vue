@@ -52,23 +52,16 @@ import {
 } from "@/views/editor/useProjectEdit";
 import {formPosition} from "@/constant/loginEdit";
 import {FileTransform} from "@/utils/fileTransform";
-import {CheckType} from "@/utils/checkType";
 
 const appInfo = reactive({
   app: {
     // 项目名称
-    projectName: '',
-    // 项目id
-    projectId: '',
-    // 项目logo
-    projectLogo: '',
+    projectName: 'demo',
     // 描述
     describe: '',
-    // 重定向地址
-    redirect: '',
     // 背景图片
     bgImg:{
-      src: "/images/bgImg.png",
+      src: "https://yanxiao8080.github.io/login-factory/images/bgImg.png",
       position: [],
     }
   },
@@ -127,7 +120,7 @@ const {
 } = useLoginType(appInfo.formTypeList)
 
 function previewClick() {
-  window.open(origin + '/preview')
+  window.open(origin + import.meta.env.VITE_BASE + '/#/preview')
 }
 
 function saveConfig(){
