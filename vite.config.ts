@@ -7,7 +7,7 @@ import * as path from "path";
 // https://vitejs.dev/config/
 export default ({mode})=>{
   const env = loadEnv(mode, process.cwd())
-
+  console.log('env',env)
   return defineConfig({
     plugins: [
       vue(),
@@ -21,23 +21,6 @@ export default ({mode})=>{
     base: env.env,
     build: {
       outDir: 'docs'
-    },
-    // 反向代理这样配置
-    server: {
-      // port: 5174,
-      // host: '192.168.1.168',
-      // 是否自动在浏览器打开
-      open: true,
-      // 是否开启 https
-      https: false,
-      proxy: {
-        '/authApi/': {
-          target: 'http://192.168.1.66:8090',
-          changeOrigin: true,
-          ws: true,
-          rewrite: (path) => path.replace(/^\/authApi/, '/'),
-        }
-      }
     }
   })
 }
