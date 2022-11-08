@@ -26,7 +26,7 @@
 
 <script setup lang="ts">
 import ColorPickerPanel from "@caohenghu/vue-colorpicker";
-import {defineEmits, ref} from "vue";
+import {ref} from "vue";
 import {colorPicker} from "@/constant/loginEdit";
 
 interface colorInfo {
