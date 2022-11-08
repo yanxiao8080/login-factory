@@ -18,7 +18,7 @@ export default ({mode})=>{
         '@': `${path.resolve(__dirname, 'src')}`
       }
     },
-    base: env.env,
+    base: env.VITE_BASE,
     build: {
       outDir: 'docs'
     }
