@@ -1,0 +1,42 @@
+/*
+ * @Description: 全局滚动条样式
+ * @Author: yanxiao
+ * @Github: https://github.com/yanxiaos
+ * @Date: 2021-08-14 15:44:03
+ * @LastEditors: yanxiao
+ */
+
+// 滚动条最底部样式
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+  // background: #ffffff;
+}
+// 滚动条背景条样式
+::-webkit-scrollbar-track {
+  // background: #ffffff;
+  border-radius: 4px;
+}
+// 滚动条上层可滑动的条样式
+::-webkit-scrollbar-thumb {
+  background: #d2d2d2;
+  border-radius: 4px;
+}
+// 滚动条上层可滑动的条样式:hover样式
+::-webkit-scrollbar-thumb:hover {
+  background: #b9b9b9;
+}
+
+// 滚动条隐藏
+.scroll-bar-hidden::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+// 适配火狐
+*{
+  scrollbar-width: thin;
+}
+.scroll-bar-hidden{
+  scrollbar-width: none;
+}
