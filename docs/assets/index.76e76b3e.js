@@ -1,1 +1,0 @@
-import{_ as e,o as t,c as s}from"./index.c9d2cb4f.js";const o={name:"index",inheritAttrs:!1},n={class:"box"};function c(r,a,_,i,d,p){return t(),s("div",n)}const l=e(o,[["render",c]]);export{l as default};
