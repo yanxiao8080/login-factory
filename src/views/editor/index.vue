@@ -127,7 +127,7 @@ const {
 } = useLoginType(appInfo.formTypeList)
 
 function previewClick() {
-  window.open(origin + import.meta.env.VITE_BASE + '/preview')
+  window.open(origin + import.meta.env.VITE_BASE + '/#/preview')
 }
 
 function saveConfig(){
