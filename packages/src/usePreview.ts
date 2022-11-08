@@ -3,13 +3,12 @@
  * @Author: yanxiaos
  * @Github: https://github.com/yanxiaos
  * @Date: 2022/10/12 14:18
- * @Path: src/views/preview/usePreview.ts
+ * @Path: src/views/src/usePreview.ts
  */
 import {Component, computed, reactive, Ref, ref, watch} from "vue";
 import {ElInput} from "element-plus";
 import UserInput from "./components/UserInput.vue";
 import PasswordInput from "./components/PasswordInput.vue";
-import {MsgType} from "@/enum/loginAuthEnum";
 
 interface FormComp{
     type: string,
@@ -32,42 +31,6 @@ export const formCompList: FormComp[] = [
         component: PasswordInput
     }
 ]
-
-
-export function useAppInfo(){
-
-    const appInfo: Ref<{
-        app:any,
-        formAreaConfig:any,
-        formTypeList:any[],
-        titleList:any[]
-    }> = ref({
-        app:{},
-        formAreaConfig:{},
-        formTypeList:[],
-        titleList:[]
-    })
-
-    // 数据来源 - 编辑预览
-    const channel = new BroadcastChannel('preview');
-
-    channel.postMessage(JSON.stringify({
-        type: MsgType.LOGIN_CREATE,
-        msg: '登陆页创建'
-    }))
-
-    channel.addEventListener('message',function (event){
-        const msgData = JSON.parse(event.data)
-        appInfo.value = msgData.data
-    })
-
-    return {
-        app: computed(()=>appInfo.value.app),
-        formAreaConfig: computed(()=>appInfo.value.formAreaConfig),
-        formTypeList: computed(()=>appInfo.value.formTypeList),
-        titleList: computed(()=>appInfo.value.titleList),
-    }
-}
 
 export function useLoginStyle(app:any, formAreaConfig:any){
 

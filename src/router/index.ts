@@ -13,6 +13,10 @@ import 'nprogress/nprogress.css'
 import Layout from "@/views/layout/index.vue";
 
 const routes: Array<RouteRecordRaw> = [{
+  path: '/',
+  name: "/",
+  redirect: '/src'
+},{
   path: '/preview',
   name: "Preview",
   component: ()=>import('@/views/preview/index.vue'),
@@ -21,32 +25,6 @@ const routes: Array<RouteRecordRaw> = [{
     title: '预览',
     code: 'H1001'
   }
-},{
-  path: '/test',
-  name: "Test",
-  component: ()=>import('@/views/test/index.vue'),
-  meta:{
-    // document.title 标题
-    title: 'test',
-    code: 'test'
-  }
-},{
-  path: '/',
-  name: "/",
-  redirect: '/editor',
-  component: Layout,
-  children: [
-    {
-      path: '/editor',
-      name: "ProjectEdit",
-      component: ()=>import('@/views/editor/index.vue'),
-      meta:{
-        // document.title 标题
-        title: 'login factory',
-        code: 'H1002'
-      }
-    }
-  ]
 }]
 
 const router = createRouter({

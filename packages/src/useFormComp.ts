@@ -3,10 +3,10 @@
  * @Author: yanxiaos
  * @Github: https://github.com/yanxiaos
  * @Date: 2022/10/14 14:04
- * @Path: src/views/preview/components/useFormComp.ts
+ * @Path: src/views/src/components/useFormComp.ts
  */
 import {inject, InjectionKey, onBeforeUnmount, onMounted, provide, reactive, ref} from "vue";
-import {Publisher} from "@/utils/publisher";
+import {Publisher} from "../utils/publisher";
 
 const formDataInject: InjectionKey<Record<string, string|number|boolean>> = Symbol()
 const verifyResInject: InjectionKey<Record<string, string>> = Symbol()

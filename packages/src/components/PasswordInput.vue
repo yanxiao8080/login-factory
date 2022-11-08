@@ -3,7 +3,7 @@
  * @Author: yanxiaos
  * @Github: https://github.com/yanxiaos
  * @Date: 2022/10/12 15:55
- * @Path: src/views/preview/components/PasswordInput.vue
+ * @Path: src/views/src/components/PasswordInput.vue
 -->
 <template>
   <ElInput v-model="modelValue"
@@ -18,7 +18,7 @@
 <script setup lang="tsx">
 import {Lock,View,Hide} from "@element-plus/icons-vue";
 import {computed, ref} from "vue";
-import {useRegisterFormItemComp} from "@/views/preview/useFormComp";
+import {useRegisterFormItemComp} from "../useFormComp";
 
 const props = defineProps({
   formCompAttrs:{

@@ -3,7 +3,7 @@
  * @Author: yanxiaos
  * @Github: https://github.com/yanxiaos
  * @Date: 2022/10/12 15:48
- * @Path: src/views/preview/components/UserInput.vue
+ * @Path: src/views/src/components/UserInput.vue
 -->
 <template>
   <ElInput v-model="modelValue"
@@ -17,7 +17,7 @@
 
 <script setup lang="ts">
 import {User} from "@element-plus/icons-vue";
-import {useRegisterFormItemComp} from "@/views/preview/useFormComp";
+import {useRegisterFormItemComp} from "../useFormComp";
 
 const props = defineProps({
   formCompAttrs:{

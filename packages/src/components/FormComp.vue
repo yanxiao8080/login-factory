@@ -3,7 +3,7 @@
  * @Author: yanxiaos
  * @Github: https://github.com/yanxiaos
  * @Date: 2022/10/12 15:45
- * @Path: src/views/preview/components/FormComp.vue
+ * @Path: src/views/src/components/FormComp.vue
 -->
 <template>
   <ElForm :label-width="props.formTypeItem.showLabel? props.formTypeItem.labelWidth:0"
@@ -27,10 +27,9 @@
 </template>
 
 <script setup lang="tsx">
-import {formCompList, useSubmitConfigStyle} from "@/views/preview/usePreview";
+import {formCompList, useSubmitConfigStyle} from "../usePreview";
 import type {Component} from "vue";
-import {useRegisterFormComp} from "@/views/preview/useFormComp";
-import {useRoute} from "vue-router";
+import {useRegisterFormComp} from "../useFormComp";
 
 const props = defineProps({
   formTypeItem: {
@@ -40,6 +39,8 @@ const props = defineProps({
     })
   }
 })
+
+const emit = defineEmits(['submit'])
 
 const {
   submitButConfig,
@@ -60,17 +61,9 @@ const {
   verify
 } = useRegisterFormComp()
 
-const route = useRoute()
-const clientId = route.query.client_id as string|undefined
-const redirectUri = route.query.redirect_uri as string|undefined
-
-console.log('clientId',clientId,redirectUri)
-
 function submit(){
   const verifyRes = verify()
-  console.log('submit verifyRes',verifyRes)
-  if(!verifyRes.res) return
-  console.log('submit formData',formData)
+  emit('submit', verifyRes, formData)
 }
 
 </script>
@@ -86,18 +79,17 @@ export default {
 .el-form{
   width: 100%;
 }
-
 .but-box{
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
-  .el-button{
-    width: 100%;
-    border: none;
-    &:active{
-      opacity: 0.8;
-    }
-  }
+}
+.el-button{
+  width: 100%;
+  border: none;
+}
+.el-button:active{
+  opacity: 0.8;
 }
 </style>
