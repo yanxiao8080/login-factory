@@ -1,9 +1,8 @@
 {
 	"name": "login-factory",
 	"private": true,
-	"version": "1.0.1",
+	"version": "1.0.0",
 	"type": "module",
-	"keywords": ["vue3", "login"],
 	"scripts": {
 		"dev": "vite",
 		"build": "vite build",
