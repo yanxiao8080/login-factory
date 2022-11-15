@@ -1,3 +1,5 @@
+github: https://github.com/yanxiao8080/login-factory.git
+
 # 使用
 
 ## 在线编辑登陆页
